@@ -19,15 +19,16 @@ data/
 Run the following commands from the project root to train the model:
 
 ```bash
-# CC200
-CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py --atlas CC200
+# CC200, seeds 0–14 (default)
+CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py
 
 # AAL116
 CUDA_VISIBLE_DEVICES=0 python scripts/reproduce.py --atlas AAL116
 ```
 
-- **--atlas**: `CC200`, `AAL116`, or `all` (default).
+- **--atlas**: `CC200` (default), `AAL116`, or `all`.
 - **--data-dir**: Dataset directory, default `data`.
+- **--seeds**: Training seeds, default 0–14.
 
 Each run trains for 50 epochs. Model and training settings are in `source/conf/`.
 

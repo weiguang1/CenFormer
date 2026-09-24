@@ -11,7 +11,7 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--atlas", choices=("CC200", "AAL116", "all"), default="all")
+    parser.add_argument("--atlas", choices=("CC200", "AAL116", "all"), default="CC200")
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
     parser.add_argument("--output-dir", type=Path, default=Path("outputs"))
     parser.add_argument("--seeds", type=int, nargs="+", default=list(range(15)))
