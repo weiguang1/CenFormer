@@ -1,0 +1,15 @@
+name: abide
+atlas: AAL116
+batch_size: 64
+test_batch_size: 64
+val_batch_size: 64
+train_set: 0.7
+# Historical field name: the second split returns 20% validation, 10% test.
+val_set: 0.1
+path: ${oc.env:CENFORMER_DATA_DIR,data}/abide116.npy
+stratified: true
+drop_last: true
+fixed_split: true
+split_random_state: 20
+nhead: 4
+community_map: assets/aal116_community_map.pickle

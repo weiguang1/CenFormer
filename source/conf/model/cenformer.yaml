@@ -1,0 +1,29 @@
+# The original class name and parameter layout are retained for reproducibility.
+name: ComBrainTF
+sizes: [360, 8]  # The first size is set to the atlas node count at construction.
+pooling: [false, true]
+pos_encoding: none
+orthogonal: true
+freeze_center: true
+project_assignment: true
+pos_embed_dim: 360
+nhead: ${dataset.nhead}
+num_MHSA: 1
+dec_hidden: 32
+dec_kl_weight: 0.0
+uniform_local_attn: true
+uniform_global_attn: true
+pr_global_attn: false
+community_map: ${dataset.community_map}
+pagerank_node: true
+pagerank_community: true
+pagerank_damping: 0.95
+pagerank_topk: 20
+pagerank_signed: abs
+pagerank_norm: zscore
+pagerank_where: local
+pagerank_init: zero
+pagerank_lr_mult: 100.0
+pagerank_comm_mode: gate
+pagerank_attn_bias: false
+global_stage: transformer

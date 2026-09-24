@@ -1,0 +1,25 @@
+defaults:
+  - dataset: CC200
+  - model: cenformer
+  - optimizer: adam
+  - training: basic_training
+  - datasz: 100p
+  - preprocess: non_mixup
+  - _self_
+
+repeat_time: 1
+seed_offset: 0
+log_path: outputs/${dataset.atlas}
+save_learnable_graph: false
+save_attn_weights: false
+save_test_attn_weights: false
+project: CenFormer
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${log_path}/hydra/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${log_path}/hydra/multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
